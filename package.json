@@ -1,7 +1,7 @@
 {
   "name": "hellofan",
   "version": "1.0.0",
-  "description": "PWA, guide for football fans",
+  "description": "Project to learn building PWAs. City football guide for fans",
   "main": "index.html",
   "scripts": {
     "start": "webpack-dev-server",
