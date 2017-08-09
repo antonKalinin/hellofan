@@ -1,0 +1,47 @@
+.map {
+    height: 15rem;
+    width: 100%;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.mapMark {
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+}
+
+.match {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 0.7rem;
+}
+
+.team {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 0.9rem;
+    background: #ddd;
+}
+
+.time {
+    padding: 0.3rem;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.locationName {
+    font-weight: 700;
+}
+
+.locationDistance {
+    flex-grow: 1;
+    text-align: right;
+}

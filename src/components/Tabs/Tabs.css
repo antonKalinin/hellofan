@@ -1,0 +1,36 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 3.15rem;
+    width: 100%;
+}
+
+.tab {
+    position: relative;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab.active > svg,
+.tab:hover > svg {
+    fill: #00C865;
+}
+
+.tab:active {
+    background: #f6f6f6;
+}
+
+.tab.active:after {
+    content: '';
+    background-color: #00C865;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* #1da1f2 */

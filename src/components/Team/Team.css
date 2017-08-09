@@ -1,0 +1,36 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.root.left {
+    justify-content: flex-end;
+}
+
+.root.right {
+    justify-content: flex-start;
+}
+
+.logo {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-size: 3.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.name {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.left .name {
+    text-align: right;
+    margin-right: 1rem;
+}
+
+.right .name {
+    text-align: right;
+    margin-left: 1rem;
+}

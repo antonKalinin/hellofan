@@ -1,0 +1,36 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.teams {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.teams > div {
+    flex: 1;
+}
+
+.time {
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.arena {
+    margin-bottom: 0.5rem;
+}
+
+.tournament {
+    font-size: 0.9rem;
+    color: #777;
+}
