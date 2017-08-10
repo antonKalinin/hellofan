@@ -1,8 +1,10 @@
-import types from './types';
+/* @flow */
 
-export function setLocation(location, position): {type: string} {
+import type {ActionType} from './types';
+
+export function setLocation(location: any, position: Array<number>): ActionType {
     return {
-        type: types.SET_LOCATION,
+        type: 'SET_LOCATION',
         location,
         position,
     };

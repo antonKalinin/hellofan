@@ -1,8 +1,16 @@
 /* @flow */
 
-// TODO: Finish it
-type MatchType = Object;
-type BroadcastType = Object;
+export type MatchType = Object;
+
+export type BroadcastType = {
+    id: string,
+    match: MatchType,
+    location: {
+        name: string,
+        address: string,
+        phone: string,
+    }
+};
 
 export type ActionType =
     // ui
@@ -11,14 +19,14 @@ export type ActionType =
   | { type: 'CHANGE_TAB', activeTabIndex: number }
 
     // user
-  | { type: 'SET_LOCATION', location: Object }
+  | { type: 'SET_LOCATION', location: Object, position: Array<number> }
 
     // match
   | { type: 'RECEIVE_MATCH', match: MatchType }
   | { type: 'RECEIVE_MATCH_LIST', list: Array<MatchType> }
 
     // broadcast
-  | { type: 'RECEIVE_BROADCAST', match: BroadcastType }
+  | { type: 'RECEIVE_BROADCAST', broadcast: BroadcastType }
   | { type: 'RECEIVE_BROADCAST_LIST', list: Array<BroadcastType> };
 
 export type DispatchType = (

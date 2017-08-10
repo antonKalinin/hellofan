@@ -1,6 +1,14 @@
-import actionType from '../actions/types';
+/**
+ * @flow
+ */
 
-export default function ui(state, action) {
+import type {
+    ActionType,
+    StateType,
+    BroadcastStateType,
+} from '../actions/types';
+
+export default function broadcast(state: StateType, action: ActionType): BroadcastStateType {
     if (typeof state === 'undefined') {
         return {
             list: [],
@@ -8,7 +16,7 @@ export default function ui(state, action) {
     }
 
     switch (action.type) {
-    case actionType.RECEIVE_BROADCAST_LIST:
+    case 'RECEIVE_BROADCAST_LIST':
         return {...state, list: action.list};
     default:
         return state;

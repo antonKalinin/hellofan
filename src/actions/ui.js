@@ -1,20 +1,22 @@
-import types from './types';
+/* @flow */
 
-export function minimizeHeader(): {type: string} {
+import type {ActionType} from './types';
+
+export function minimizeHeader(): ActionType {
     return {
-        type: types.MINIMIZE_HEADER,
+        type: 'MINIMIZE_HEADER',
     };
 }
 
-export function maximizeHeader(): {type: string} {
+export function maximizeHeader(): ActionType {
     return {
-        type: types.MAXIMIZE_HEADER,
+        type: 'MAXIMIZE_HEADER',
     };
 }
 
-export function chaneNavigationTab(index: number): {type: string, activeTabIndex: number} {
+export function chaneNavigationTab(index: number): ActionType {
     return {
-        type: types.CHANGE_TAB,
+        type: 'CHANGE_TAB',
         activeTabIndex: index,
     };
 }

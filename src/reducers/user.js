@@ -1,6 +1,10 @@
-import actionType from '../actions/types';
+/**
+ * @flow
+ */
 
-export default function user(state, action) {
+import type {UiStateType, ActionType} from '../actions/types';
+
+export default function user(state: UiStateType, action: ActionType) {
     if (typeof state === 'undefined') {
         return {
             isHeaderMinimized: false,
@@ -14,7 +18,7 @@ export default function user(state, action) {
     }
 
     switch (action.type) {
-    case actionType.SET_LOCATION: {
+    case 'SET_LOCATION': {
         const {
             AddressDetails: {
                 Country: {
@@ -33,7 +37,7 @@ export default function user(state, action) {
             location: {
                 city,
                 country,
-                position: action.position,
+                position: action && action.position,
             },
         };
     }

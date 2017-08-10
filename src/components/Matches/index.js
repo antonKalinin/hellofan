@@ -1,3 +1,9 @@
+/**
+ * global ymaps
+ *
+ * @flow 
+ */
+
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
@@ -5,11 +11,12 @@ import {Link} from 'react-router-dom';
 import Team from '../Team';
 import DateRange from '../DateRange';
 
+import type {DispatchType, MatchType, StateType} from '../../actions/types';
 import {fetchMatchList} from '../../actions/match';
 
 import styles from './Matches.css';
 
-class Match extends Component {
+class MatchItem extends Component {
     props: {
         teamA: Object,
         teamB: Object,
@@ -48,7 +55,9 @@ class Match extends Component {
 
 class Matches extends Component {
     props: {
-        dispatch: () => void,
+        dispatch: DispatchType,
+        match: Object, // React Router
+        matchList: Array<MatchType>,
         isMobile: boolean,
     }
 
@@ -59,22 +68,25 @@ class Matches extends Component {
 
     render() {
         const {isMobile, matchList} = this.props;
+
         const route = this.props.match;
 
         return (
             <div className={styles.root}>
-                {matchList.map((match: Object, index: number) => (
-                    <Link className={styles.item} to={`${route.url}/${index}`} key={`match_${index}`}>
-                        <Match {...match} isMobile={isMobile} />
-                    </Link>
-                ))}
+                <div className={styles.list}>
+                    {matchList.map((match: MatchType, index: number) => (
+                        <Link className={styles.item} to={`match/${index}`} key={`match_${index}`}>
+                            <MatchItem {...match} isMobile={isMobile} />
+                        </Link>
+                    ))}
+                </div>
                 <DateRange />
             </div>
         );
     }
 }
 
-export default connect(state => ({
+export default connect((state: StateType) => ({
     isMobile: state.ui.isMobile,
     matchList: state.match.list,
 }))(Matches);

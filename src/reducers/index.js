@@ -1,3 +1,7 @@
+/**
+ * @flow
+ */
+
 import {combineReducers} from 'redux';
 import ui from './ui';
 import user from './user';

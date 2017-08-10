@@ -14,18 +14,19 @@
     justify-content: center;
 }
 
-.tab.active > svg,
-.tab:hover > svg {
-    fill: #00C865;
+.tab > svg {
+    fill: #fff;
+    opacity: 0.5;
 }
 
-.tab:active {
-    background: #f6f6f6;
+.tab.active > svg,
+.tab:hover > svg {
+    opacity: 1;
 }
 
 .tab.active:after {
     content: '';
-    background-color: #00C865;
+    background-color: #fff;
     height: 2px;
     position: absolute;
     bottom: 0;
@@ -33,4 +34,5 @@
     right: 0;
 }
 
+/* #27B27A */
 /* #1da1f2 */

@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: center;
     padding: 1rem;
-    border-bottom: 1px solid #ddd;
     cursor: pointer;
 }
 
@@ -33,4 +32,8 @@
 .tournament {
     font-size: 0.9rem;
     color: #777;
+}
+
+.actions {
+    margin-top: 2rem;
 }

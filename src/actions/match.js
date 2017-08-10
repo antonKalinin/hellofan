@@ -6,7 +6,7 @@ import type {ActionType} from './types';
 const MATCHES = [
     {
         teamA: {name: 'Zenit', shortName: 'ZEN'},
-        teamB: {name: 'CSKA', shortName: 'CSK'},
+        teamB: {name: 'CSKA', shortName: 'CSM'},
         time: '20:00',
         date: '27/07/2017',
         arena: 'Saint Petersburg Stadium',
@@ -21,8 +21,8 @@ const MATCHES = [
         tournament: 'Russian Premier Ligue , 4th tour',
     },
     {
-        teamA: {name: 'Tosno', shortName: 'TSN'},
-        teamB: {name: 'Roma', shortName: 'ROM'},
+        teamA: {name: 'Zenit', shortName: 'ZEN'},
+        teamB: {name: 'Napoli', shortName: 'NAP'},
         time: '21:30',
         date: '15/08/2017',
         arena: 'Petrovsky Stadium',
@@ -30,15 +30,15 @@ const MATCHES = [
     },
     {
         teamA: {name: 'Zenit', shortName: 'ZEN'},
-        teamB: {name: 'Barcelona', shortName: 'BRC'},
+        teamB: {name: 'Liverpool', shortName: 'LIV'},
         time: '19:00',
         date: '16/08/2017',
         arena: 'Saint Petersburg Stadium',
         tournament: 'Third qualifying round , 3nd leg',
     },
     {
-        teamA: {name: 'Tosno', shortName: 'TSN'},
-        teamB: {name: 'Milan', shortName: 'MLN'},
+        teamA: {name: 'Liverpool', shortName: 'LIV'},
+        teamB: {name: 'Milan', shortName: 'ACM'},
         time: '21:00',
         date: '21/08/2017',
         arena: 'Petrovsky Stadium',

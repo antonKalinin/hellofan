@@ -1,4 +1,8 @@
-/* global ymaps */
+/**
+ * global ymaps
+ *
+ * @flow
+ */
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
@@ -48,6 +52,6 @@ class Location extends Component {
 }
 
 export default connect(state => ({
-    isMobile: state.flags.isMobile,
+    isMobile: state.ui.isMobile,
     geoLocation: state.user.location,
 }))(Location);

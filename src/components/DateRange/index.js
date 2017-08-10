@@ -1,3 +1,6 @@
+/**
+ * @flow
+ */
 import React, {Component} from 'react';
 import moment from 'moment';
 import {connect} from 'react-redux';
@@ -34,14 +37,6 @@ class DateRange extends Component {
         });
     }
 
-    onOkClick = () => {
-        this.setState({isExpanded: false});
-    }
-
-    props: {
-
-    }
-
     render() {
         const {isExpanded, startDate, endDate, focusedInput} = this.state;
 
@@ -64,7 +59,13 @@ class DateRange extends Component {
                     onDatesChange={this.onDatesChange}
                     onFocusChange={this.onFocusChange}
                 />
-                <Button basic color='teal' size='big' onClick={this.onOkClick}>Ok</Button>
+                <Button
+                    color='linkedin'
+                    size='medium'
+                    onClick={() => this.setState({isExpanded: false})}
+                >
+                    Select dates
+                </Button>
             </div>
         );
     }

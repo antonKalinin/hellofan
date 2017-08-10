@@ -1,6 +1,13 @@
 .map {
+    position: fixed;
+    bottom: 0;
     height: 15rem;
     width: 100%;
+}
+
+.list {
+    overflow-y: auto;
+    padding-bottom: 15rem;
 }
 
 .item {

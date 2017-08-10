@@ -16,18 +16,18 @@ const Tab = props => (
     </NavLink>
 );
 
-export default class Tabs extends Component {
+type PropsType = {
+    active: number,
+    onChange: () => {},
+};
+
+export default class Tabs extends Component<void, PropsType, void> {
     constructor(props) {
         super(props);
 
         this.state = {
             active: undefined,
         };
-    }
-
-    props: {
-        active: number,
-        onChange: () => {},
     }
 
     handleTabChange = index => {
@@ -38,18 +38,18 @@ export default class Tabs extends Component {
 
     render() {
         const tabs = [
-            {icon: 'ion-ios-football', url: '/match'},
-            {icon: 'ion-ios-location', url: '/location'},
-            {icon: 'ion-ios-pint', url: '/broadcast'},
+            {icon: 'ion-ios-football', url: '/matches'},
+            {icon: 'ion-ios-flag', url: '/stadiums'},
+            {icon: 'ion-ios-pint', url: '/broadcasts'},
         ];
 
         const {active} = this.state;
 
         return (
             <div className={styles.root}>
-                {tabs.map((tab, index) =>
+                {tabs.map((tab: {icon: string, url: string}, index: number) =>
                     (<Tab
-                        key={`tab_${index}`}
+                        key={`tab_${tab.url.slice(1)}`}
                         tab={tab}
                         index={index}
                         active={active !== undefined ? active === index : undefined}

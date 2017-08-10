@@ -1,6 +1,8 @@
-import types from './types';
+/* @flow */
 
-/* MOCK DATA */ 
+import type {ActionType} from './types';
+
+/* MOCK DATA */
 const BROADCASTS = [
     {
         id: '1',
@@ -15,7 +17,7 @@ const BROADCASTS = [
         location: {
             name: 'Union Bar',
             address: 'Chernishevskogo, 21',
-            telephone: '+7 911 900 79 80',
+            phone: '+7 911 900 79 80',
         },
     },
     {
@@ -31,7 +33,7 @@ const BROADCASTS = [
         location: {
             name: 'Mingle Bar',
             address: 'Chernishevskogo, 21',
-            telephone: '+7 911 900 79 80',
+            phone: '+7 911 900 79 80',
         },
     },
     {
@@ -47,7 +49,7 @@ const BROADCASTS = [
         location: {
             name: 'Bar na Mohovoy',
             address: 'Chernishevskogo, 21',
-            telephone: '+7 911 900 79 80',
+            phone: '+7 911 900 79 80',
         },
     },
     {
@@ -63,7 +65,7 @@ const BROADCASTS = [
         location: {
             name: 'Farch & Bochka',
             address: 'Chernishevskogo, 21',
-            telephone: '+7 911 900 79 80',
+            phone: '+7 911 900 79 80',
         },
     },
     {
@@ -79,23 +81,21 @@ const BROADCASTS = [
         location: {
             name: 'Skotniy Dvor',
             address: 'Chernishevskogo, 21',
-            telephone: '+7 911 900 79 80',
+            phone: '+7 911 900 79 80',
         },
     },
 ];
 
-export function fetchBroadcastList() {
+export function fetchBroadcastList(): ActionType {
     return {
-        type: types.RECEIVE_BROADCAST_LIST,
+        type: 'RECEIVE_BROADCAST_LIST',
         list: BROADCASTS,
     };
 }
 
-export function fetchBroadcast(id) {
-    return dispatch => {
-        dispatch({
-            type: types.RECEIVE_BROADCAST,
-            broadcast: BROADCASTS[0],
-        });
+export function fetchBroadcast(id: number): ActionType {
+    return {
+        type: 'RECEIVE_BROADCAST',
+        broadcast: BROADCASTS[id],
     };
 }

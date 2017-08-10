@@ -7,7 +7,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import type {DispatchType, StateType} from '../../actions/types';
+import type {DispatchType, StateType, BroadcastType} from '../../actions/types';
 import {fetchBroadcastList} from '../../actions/broadcast';
 import styles from './Broadcasts.css';
 
@@ -32,7 +32,7 @@ class Broadcast extends Component {
                     {location.name}
                 </div>
                 <div className={styles.locationDistance}>
-                    {`${location.distance || String.prototype.slice.call(Math.random() * 10, 0, 3)}km`}
+                    {`${String.prototype.slice.call(Math.random() * 10, 0, 3)}km`}
                 </div>
             </div>
         );
@@ -41,38 +41,42 @@ class Broadcast extends Component {
 
 type PropsType = {
     dispatch: DispatchType,
-    broadcastList: [],
-    geoLocation: {},
+    broadcastList: Array<BroadcastType>,
+    userLocation: {
+        position: Array<number>
+    },
 };
 
 class Broadcasts extends Component<void, PropsType, void> {
     constructor(props) {
         super(props);
+
+        this.map = null;
     }
 
     componentDidMount() {
-        const {geoLocation, dispatch} = this.props;
+        const {userLocation, dispatch} = this.props;
 
-        if (geoLocation && geoLocation.position) {
-            this.renderMap(geoLocation.position);
+        if (userLocation && userLocation.position) {
+            this.renderMap(userLocation.position);
         }
 
         dispatch(fetchBroadcastList());
     }
 
     componentWillReceiveProps(nextProps) {
-        const {geoLocation} = nextProps;
+        const {userLocation} = nextProps;
 
-        if (geoLocation && geoLocation.position) {
-            this.renderMap(geoLocation.position);
+        if (userLocation && userLocation.position) {
+            this.renderMap(userLocation.position);
         }
     }
 
-    renderMap(position: [number, number]) {
+    renderMap(position: Array<number>) {
         ymaps.ready(() => {
-            ymaps.Map('map', {
-                controls: [],
+            this.map = new ymaps.Map('map', {
                 center: position,
+                controls: [],
                 zoom: 10,
             }, {
                 searchControlProvider: 'yandex#search',
@@ -81,21 +85,21 @@ class Broadcasts extends Component<void, PropsType, void> {
     }
 
     render() {
-        const {broadcastList, geoLocation} = this.props;
+        const {broadcastList} = this.props;
 
         return (
             <div className={styles.root}>
-                {geoLocation && geoLocation.position && <div id='map' className={styles.map}></div>}
                 <div className={styles.list}>
                     {broadcastList.map((broadcast, index) =>
                         <Broadcast index={index} {...broadcast} key={`broadcast_${index}`} />)}
                 </div>
+                <div id='map' className={styles.map}></div>
             </div>
         );
     }
 }
 
 export default connect((state: StateType) => ({
-    geoLocation: state.user.location,
+    userLocation: state.user.location,
     broadcastList: state.broadcast.list,
 }))(Broadcasts);

@@ -21,7 +21,10 @@
     z-index: 1000;
     right: 0;
     left: 0;
-    background: #fff;
+    background: linear-gradient(to bottom, #2980b9, #2c3e50);
+    /*background: linear-gradient(to bottom, #2b5876, #4e4376);*/
+    /*background: linear-gradient(to bottom, #516395, #614385);*/
+    background: linear-gradient(45deg, #005c97, #363795);
     box-shadow: 0 0 4px #657786;
     transform: translateZ(0);
     transition: transform .2s;
@@ -35,6 +38,7 @@
     margin: 0;
     padding: 1rem;
     font-size: 1.25rem;
+    color: #fff;
 }
 
 /* background: linear-gradient(0deg, #FF4E50, #ff784e); */

@@ -1,4 +1,7 @@
-/* @flow */
+/**
+ * @flow
+ */
+
 import type {UiStateType, ActionType} from '../actions/types';
 import {isMobile} from '../modules/utils';
 

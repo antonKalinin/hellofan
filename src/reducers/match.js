@@ -1,6 +1,14 @@
-import actionType from '../actions/types';
+/**
+ * @flow
+ */
 
-export default function match(state, action) {
+import type {
+    ActionType,
+    MatchStateType,
+    StateType,
+} from '../actions/types';
+
+export default function match(state: StateType, action: ActionType): MatchStateType {
     if (typeof state === 'undefined') {
         return {
             list: [],
@@ -8,9 +16,9 @@ export default function match(state, action) {
     }
 
     switch (action.type) {
-    case actionType.RECEIVE_MATCH_LIST:
+    case 'RECEIVE_MATCH_LIST':
         return {...state, list: action.list};
-    case actionType.RECEIVE_MATCH:
+    case 'RECEIVE_MATCH':
         return {...state, match: action.match};
     default:
         return state;
