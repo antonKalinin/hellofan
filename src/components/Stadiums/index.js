@@ -45,7 +45,8 @@ class Location extends Component {
     render() {
         return (
             <div>
-                <div id='map' className={styles.map}></div>
+                <h2>Petrovsky Stadium</h2>
+                <h2>Krestovsky Stadium</h2>
             </div>
         );
     }
@@ -55,3 +56,4 @@ export default connect(state => ({
     isMobile: state.ui.isMobile,
     geoLocation: state.user.location,
 }))(Location);
+    

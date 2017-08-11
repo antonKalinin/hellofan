@@ -24,10 +24,14 @@
     align-items: center;
     justify-content: center;
     padding: 0 1rem;
-    background: #005c97;
+    background: linear-gradient(60deg, #24c6dc, #514a9d);
     font-size: 1.2rem;
     font-weight: 100;
     letter-spacing: 0.1rem;
     color: #fff;
     cursor: pointer;
+}
+
+.callendarIcon {
+    margin-right: 1rem;
 }

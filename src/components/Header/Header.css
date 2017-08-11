@@ -1,12 +1,14 @@
 .root {
     position: relative;
     display: flex;
+
 }
 
 .container {
     width: 100%;
     box-sizing: border-box;
     margin: 0 auto;
+    background: linear-gradient(30deg, rgba(36,198,220, .7), rgba(81,74,157, .9));
 }
 
 @media screen and (min-width: 600px) {
@@ -21,10 +23,9 @@
     z-index: 1000;
     right: 0;
     left: 0;
-    background: linear-gradient(to bottom, #2980b9, #2c3e50);
-    /*background: linear-gradient(to bottom, #2b5876, #4e4376);*/
-    /*background: linear-gradient(to bottom, #516395, #614385);*/
-    background: linear-gradient(45deg, #005c97, #363795);
+
+    background-position: center 30%;
+    background-size: 100%;
     box-shadow: 0 0 4px #657786;
     transform: translateZ(0);
     transition: transform .2s;
@@ -42,3 +43,8 @@
 }
 
 /* background: linear-gradient(0deg, #FF4E50, #ff784e); */
+/*background: linear-gradient(to bottom, #2980b9, #2c3e50);*/
+/*background: linear-gradient(to bottom, #2b5876, #4e4376);*/
+/*background: linear-gradient(to bottom, #516395, #614385);*/
+/*background: linear-gradient(45deg, #005c97, #363795);*/
+/*background: linear-gradient(30deg, #24c6dc, #514a9d);*/

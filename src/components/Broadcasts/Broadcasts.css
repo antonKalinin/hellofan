@@ -1,8 +1,10 @@
 .map {
     position: fixed;
+    left: 0;
     bottom: 0;
     height: 15rem;
     width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
 }
 
 .list {

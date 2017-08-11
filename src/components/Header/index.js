@@ -10,11 +10,16 @@ class Header extends Component {
     constructor(props) {
         super(props);
 
+        const cities = ['st-petersburg', 'moscow', 'london'];
+        
         this.scrollDelta = props.isMobile ? 2 : 10;
         this.state = {
             prevScrollTop: 0,
             spacerHeight: 6.7,
             isMinimized: false,
+            backgroundImage: `url('/dist/images/cities/${
+                cities[Math.floor(Math.random() * cities.length)]
+            }.jpg')`,
         };
     }
 
@@ -41,15 +46,15 @@ class Header extends Component {
     }
 
     render() {
-        const {spacerHeight, isMinimized} = this.state;
+        const {spacerHeight, isMinimized, backgroundImage} = this.state;
         const {activeTabIndex, location} = this.props;
         const innerClassName = `${styles.inner} ${isMinimized ? styles.inner_minimized : ''}`;
 
         return (
             <header className={styles.root}>
                 <div style={{height: `${spacerHeight}rem`}} />
-                <div className={innerClassName} ref={elem => { this.elem = elem; }}>
-                    <div className={styles.container}>
+                <div className={innerClassName} style={{backgroundImage}} ref={elem => { this.elem = elem; }}>
+                    <div className={styles.container} >
                         <h2>{location.city}</h2>
                         <Tabs active={activeTabIndex} onChange={() => this.setState({isMinimized: false})} />
                     </div>

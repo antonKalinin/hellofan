@@ -4,10 +4,12 @@
 import React, {Component} from 'react';
 import moment from 'moment';
 import {connect} from 'react-redux';
+import Ionicon from 'react-ionicons';
 import {Button} from 'semantic-ui-react';
 import {DayPickerRangeController} from 'react-dates';
 
 import 'react-dates/lib/css/_datepicker.css';
+import * as theme from './ReactDates.scss';
 import styles from './DateRange.css';
 
 const START_DATE = 'startDate';
@@ -49,6 +51,12 @@ class DateRange extends Component {
                     className={styles.pickedDates}
                     onClick={() => { this.setState({isExpanded: !isExpanded}) }}
                 >
+                    <Ionicon
+                        className={styles.callendarIcon}
+                        icon='ion-ios-calendar-outline'
+                        fontSize='25px'
+                        color='#fff'
+                    />
                     {`${startDate.format('DD/MM/YY')} - ${endDate.format('DD/MM/YY')}`}
                 </div>
                 <DayPickerRangeController
